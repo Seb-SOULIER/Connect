@@ -61,6 +61,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $linkedinId;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -206,6 +211,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getLinkedinId(): ?string
+    {
+        return $this->linkedinId;
+    }
+
+    public function setLinkedinId(?string $linkedinId): self
+    {
+        $this->linkedinId = $linkedinId;
 
         return $this;
     }

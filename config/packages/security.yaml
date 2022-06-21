@@ -21,6 +21,7 @@ security:
                 - App\Security\GoogleAuthenticator
                 - App\Security\FacebookAuthenticator
                 - App\Security\AppAuthenticator
+                - App\Security\LinkedinAuthenticator
             
             # custom_authenticator: App\Security\AppAuthenticator
             logout:

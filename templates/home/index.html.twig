@@ -15,11 +15,14 @@
     <ul>
         <li>Pour vous connecter avec un compte : <code><a href="{{ path('connect_google_start') }}">Google</a></code></li>
         <li>Pour vous connecter avec un compte : <code><a href="{{ path('connect_facebook') }}">Facebook</a></code></li>
+        <li>Pour vous connecter avec un compte : <code><a href="{{ path('connect_linkedin') }}">Linkedin</a></code></li>
     </ul>
 
     {% if app.user %}
     <ul>
-        <li> Connecter avec {% if app.user.facebookId %}Facebook{% elseif app.user.googleId %}Google{% endif %} </li>
+        <li> Connecter avec {% if app.user.facebookId %}Facebook {% endif %}
+                            {% if app.user.googleId %}Google {% endif %}
+                            {% if app.user.linkedinId %}Linkedin{% endif %} </li>
         <li>{{ app.user.lastname|upper }} {{ app.user.firstname }}</li>
         <li>{{ app.user.email }}</li>
         <li> <img src="{{ app.user.picture }}" alt="{{ app.user.lastname|upper }}"></li>
